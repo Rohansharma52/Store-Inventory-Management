@@ -14,11 +14,18 @@
 
 <body>
 
+<div class="background">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
 <div class="container">
 
-<h1>Store Inventory Management</h1>
-
-<!-- Add Product Card -->
+<h1 class="title">Store Inventory Dashboard</h1>
 
 <div class="card">
 
@@ -27,30 +34,25 @@
 <div class="form">
 
 <input id="productName" placeholder="Product Name">
-
 <input id="productCode" placeholder="Product Code">
 
 <input id="category" placeholder="Category">
-
 <input id="supplierName" placeholder="Supplier Name">
 
 <input id="quantityInStock" placeholder="Quantity">
-
 <input id="unitPrice" placeholder="Price">
 
-<button onclick="addProduct()">Add Product</button>
+<button onclick="addProduct()" class="add-btn">Add Product</button>
 
 </div>
 
 </div>
-
-<!-- Product Table -->
 
 <div class="card">
 
 <h2>Products</h2>
 
-<button onclick="getProducts()">Load Products</button>
+<button onclick="getProducts()" class="load-btn">Load Products</button>
 
 <table>
 
@@ -77,5 +79,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
