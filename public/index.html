@@ -1,51 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Employee Management</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Store Inventory Management</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div class="main">
+<div class="container">
 
-<h1>Employee Management System</h1>
+<h1>Store Inventory Management</h1>
+
+<!-- Add Product Card -->
 
 <div class="card">
 
-<h2>Add Employee</h2>
+<h2>Add Product</h2>
 
-<input id="name" placeholder="Full Name">
-<input id="email" placeholder="Email">
-<input id="phone" placeholder="Phone Number">
-<input id="department" placeholder="Department">
-<input id="designation" placeholder="Designation">
-<input id="salary" placeholder="Salary">
+<div class="form">
 
-<button onclick="addEmployee()">Add Employee</button>
+<input id="productName" placeholder="Product Name">
+
+<input id="productCode" placeholder="Product Code">
+
+<input id="category" placeholder="Category">
+
+<input id="supplierName" placeholder="Supplier Name">
+
+<input id="quantityInStock" placeholder="Quantity">
+
+<input id="unitPrice" placeholder="Price">
+
+<button onclick="addProduct()">Add Product</button>
 
 </div>
 
+</div>
+
+<!-- Product Table -->
+
 <div class="card">
 
-<h2>Employees</h2>
+<h2>Products</h2>
 
-<button onclick="getEmployees()">Load Employees</button>
+<button onclick="getProducts()">Load Products</button>
 
 <table>
 
 <thead>
+
 <tr>
 <th>Name</th>
-<th>Email</th>
-<th>Department</th>
-<th>Salary</th>
+<th>Category</th>
+<th>Quantity</th>
+<th>Price</th>
 <th>Action</th>
 </tr>
+
 </thead>
 
-<tbody id="employeeTable"></tbody>
+<tbody id="productTable"></tbody>
 
 </table>
 
@@ -56,4 +77,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>

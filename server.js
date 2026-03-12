@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
-const employeeRoutes = require("./routes/employeeRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use("/api", employeeRoutes);
+app.use("/api", productRoutes);
 
 const PORT = process.env.PORT || 5000;
 

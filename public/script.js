@@ -1,63 +1,65 @@
-const API="/api/employees";
+const API="/api/products";
 
-async function addEmployee(){
+async function addProduct(){
 
-const employee={
-fullName:document.getElementById("name").value,
-email:document.getElementById("email").value,
-phoneNumber:document.getElementById("phone").value,
-department:document.getElementById("department").value,
-designation:document.getElementById("designation").value,
-salary:document.getElementById("salary").value,
-dateOfJoining:new Date(),
-employmentType:"Full-time"
+const product={
+
+productName:document.getElementById("productName").value,
+productCode:document.getElementById("productCode").value,
+category:document.getElementById("category").value,
+supplierName:document.getElementById("supplierName").value,
+quantityInStock:document.getElementById("quantityInStock").value,
+unitPrice:document.getElementById("unitPrice").value
+
 };
 
 await fetch(API,{
+
 method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body:JSON.stringify(employee)
+body:JSON.stringify(product)
+
 });
 
-alert("Employee Added Successfully");
+alert("Product Added");
 
-getEmployees();
+getProducts();
 }
 
-async function getEmployees(){
+async function getProducts(){
 
 const res=await fetch(API);
+
 const data=await res.json();
 
-const table=document.getElementById("employeeTable");
+const table=document.getElementById("productTable");
 
 table.innerHTML="";
 
-data.forEach(emp=>{
+data.forEach(p=>{
 
 table.innerHTML+=`
 <tr>
-<td>${emp.fullName}</td>
-<td>${emp.email}</td>
-<td>${emp.department}</td>
-<td>${emp.salary}</td>
-<td>
-<button class="delete" onclick="deleteEmployee('${emp._id}')">Delete</button>
-</td>
+<td>${p.productName}</td>
+<td>${p.category}</td>
+<td>${p.quantityInStock}</td>
+<td>${p.unitPrice}</td>
+<td><button onclick="deleteProduct('${p._id}')">Delete</button></td>
 </tr>
 `;
 
 });
+
 }
 
-async function deleteEmployee(id){
+async function deleteProduct(id){
 
 await fetch(API+"/"+id,{
 method:"DELETE"
 });
 
-getEmployees();
+getProducts();
 
 }
